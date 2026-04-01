@@ -9,7 +9,7 @@
     android:background="#F5F7FA"
     tools:context=".pertemuan_3.ThirdActivity">
 
-    <!-- Title -->
+    <!-- judul -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
