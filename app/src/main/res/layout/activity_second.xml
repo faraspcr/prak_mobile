@@ -8,11 +8,11 @@
     tools:context=".pertemuan2.SecondActivity">
 
     <Button
-        android:id="@+id/btnSub mit"
+        android:id="@+id/btnKirim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="424dp"
-        android:text="Submit"
+        android:text="Kirim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
