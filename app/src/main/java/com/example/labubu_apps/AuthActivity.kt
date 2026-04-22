@@ -22,7 +22,7 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Kode ini harus selalu dipanggil saat butuh akses "user_pref"
+
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         //Kondisi jika isLogin bernilai true
