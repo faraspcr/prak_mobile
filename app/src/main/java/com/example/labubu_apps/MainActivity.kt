@@ -1,5 +1,6 @@
 package com.example.labubu_apps
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -15,21 +16,26 @@ import com.example.labubu_apps.pertemuan_3.ThirdResultActivity
 import com.example.labubu_apps.pertemuan_4.FourthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
+
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
 
         binding.btnLogout.setOnClickListener {
             val intent = Intent(this, AuthActivity::class.java)
