@@ -10,8 +10,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.labubu_apps.databinding.ActivityMainBinding
 import com.example.labubu_apps.databinding.ActivityThirdBinding
+import com.example.labubu_apps.pertemuan2.SecondActivity
 import com.example.labubu_apps.pertemuan_3.ThirdResultActivity
 import com.example.labubu_apps.pertemuan_4.FourthActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -29,13 +31,35 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.btnToFourth.setOnClickListener {
-            val intent = Intent(this, FourthActivity::class.java)
-            intent.putExtra("name", "Politeknik Caltex Riau")
-            intent.putExtra("asal", "Rumbai")
-            intent.putExtra("usia", 25)
+        binding.btnLogout.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
-            finish()
+        }
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        binding.btnLogout.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi Logout")
+                .setMessage("Apakah Anda yakin ingin logout?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+                    dialog.dismiss()
+                    Log.e("Logout", "User logout")
+                    finish()
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
+            binding.btnToFourth.setOnClickListener {
+                val intent = Intent(this, FourthActivity::class.java)
+                intent.putExtra("name", "Politeknik Caltex Riau")
+                intent.putExtra("asal", "Rumbai")
+                intent.putExtra("usia", 25)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 }
