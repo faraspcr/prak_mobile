@@ -41,7 +41,7 @@ class SevenActivity : AppCompatActivity() {
             replaceFragment(TigaFragment())
         }
     }
-
+//dsfgdsfgsd
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
