@@ -1,5 +1,6 @@
-package com.example.labubu_apps.pertemuan_5
+package com.example.labubu_apps.Home.pertemuan_5
 
+import android.R
 import android.os.Bundle
 import android.view.MenuItem
 import android.webkit.WebViewClient
@@ -53,7 +54,7 @@ class WebViewActivity : AppCompatActivity() {
     // Handle klik tombol panah BACK di Toolbar atas
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            android.R.id.home -> {
+            R.id.home -> {
                 if (binding.webView.canGoBack()) {
                     binding.webView.goBack()
                 } else {

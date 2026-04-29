@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.labubu_apps.databinding.ActivityMainBinding
-import com.example.labubu_apps.pertemuan_4.FourthActivity
-import com.example.labubu_apps.pertemuan_7.SevenActivity
+import com.example.labubu_apps.Home.pertemuan_4.FourthActivity
+import com.example.labubu_apps.Home.pertemuan_7.SevenActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {

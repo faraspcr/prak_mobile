@@ -1,4 +1,4 @@
-package com.example.labubu_apps.pertemuan2
+package com.example.labubu_apps.Home.pertemuan2
 
 import android.os.Bundle
 import android.util.Log
