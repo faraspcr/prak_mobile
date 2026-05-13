@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.labubu_apps.AuthActivity
 import com.example.labubu_apps.Home.pertemuan_4.FourthActivity
 import com.example.labubu_apps.Home.pertemuan_7.SevenActivity
+import com.example.labubu_apps.Home.pertemuan_9.NinthActivity
 import com.example.labubu_apps.R
 import com.example.labubu_apps.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -49,6 +50,12 @@ class HomeFragment : Fragment() {
         // Navigasi ke Pertemuan 7
         binding.btnToSeven.setOnClickListener {
             val intent = Intent(requireContext(), SevenActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navigasi ke Pertemuan 9
+        binding.btnToNinth.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
 
