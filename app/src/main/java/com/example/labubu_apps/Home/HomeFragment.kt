@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.labubu_apps.AuthActivity
+import com.example.labubu_apps.Home.pertemuan_10.TenthActivity
 import com.example.labubu_apps.Home.pertemuan_4.FourthActivity
 import com.example.labubu_apps.Home.pertemuan_7.SevenActivity
 import com.example.labubu_apps.Home.pertemuan_9.NinthActivity
@@ -56,6 +57,11 @@ class HomeFragment : Fragment() {
         // Navigasi ke Pertemuan 9
         binding.btnToNinth.setOnClickListener {
             val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+        // Navigasi ke Pertemuan 10
+        binding.btnToTenth.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
 
