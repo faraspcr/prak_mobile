@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.labubu_apps.Home.HomeFragment
 import com.example.labubu_apps.Message.MessageFragment
 import com.example.labubu_apps.More.MoreFragment
+import com.example.labubu_apps.Note.NoteFragment  // ✅ TAMBAHAN IMPORT
 import com.example.labubu_apps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -28,18 +29,22 @@ class BaseActivity : AppCompatActivity() {
         binding.bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
-                  replaceFragment(HomeFragment())
+                    replaceFragment(HomeFragment())
                     true
                 }
                 R.id.message -> {
-                   replaceFragment(MessageFragment())
+                    replaceFragment(MessageFragment())
                     true
                 }
                 R.id.more -> {
-                   replaceFragment(MoreFragment())
+                    replaceFragment(MoreFragment())
                     true
                 }
-                else -> false // return false jika item tidak ada yang di klik
+                R.id.note -> {
+                        replaceFragment(NoteFragment())
+                    true
+                }
+                else -> false
             }
         }
     }
@@ -47,7 +52,6 @@ class BaseActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
-            //.addToBackStack(null) -> ini kita nonaktifkan agar saat back langsung keluar aplikasi
             .commit()
     }
 }

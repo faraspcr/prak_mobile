@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Labubu_Apps</string>
+    <string name="note_placeholder">Ini Fragment Note</string>
+    <string name="add_note">Tambah Note</string>
     <string name="judul">Halaman Kirim</string>
     <string name="judulBaru">Kode berhasil dikirim</string>
     <string name="anakJudul">Silahkan periksa nomor anda</string>
