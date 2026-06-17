@@ -16,12 +16,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.labubu_apps.AuthActivity
 import com.example.labubu_apps.Data.Api.PhotoApiClient
 import com.example.labubu_apps.Home.pertemuan_10.TenthActivity
+import com.example.labubu_apps.Home.pertemuan_13.ThirteenthActivity
 import com.example.labubu_apps.Home.pertemuan_4.FourthActivity
 import com.example.labubu_apps.Home.pertemuan_7.SevenActivity
 import com.example.labubu_apps.Home.pertemuan_9.NinthActivity
+
 import com.example.labubu_apps.Home.photo.PhotoAdapter
 import com.example.labubu_apps.R
 import com.example.labubu_apps.databinding.FragmentHomeBinding
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 
@@ -69,6 +72,12 @@ class HomeFragment : Fragment() {
         // Navigasi ke Pertemuan 10
         binding.btnToTenth.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navigasi ke Pertemuan 13
+        binding.btnPertemuan13.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
 
