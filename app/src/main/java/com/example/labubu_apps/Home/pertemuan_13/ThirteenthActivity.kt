@@ -1,28 +1,45 @@
 package com.example.labubu_apps.Home.pertemuan_13
 
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat.enableEdgeToEdge
+import com.example.labubu_apps.R
 import com.example.labubu_apps.databinding.ActivityThirteenthBinding
 import com.google.android.material.tabs.TabLayoutMediator
+
+
+
+
 
 class ThirteenthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirteenthBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityThirteenthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         // Setup Toolbar
         setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.title = "Camera Capture"
+        supportActionBar?.apply {
+            title = "Pertemuan 13"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
 
-        // Setup ViewPager2 dan TabLayout
-        val adapter = ThirteenthTabsAdapter(this)
-        binding.viewPager.adapter = adapter
 
+        // Setup ViewPager2 dengan Adapter
+        val tabsAdapter = ThirteenthTabsAdapter(activity = this)
+        binding.viewPager.adapter = tabsAdapter
+
+
+        // Hubungkan TabLayout dengan ViewPager2
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             when (position) {
                 0 -> tab.text = "Capture"
@@ -32,8 +49,15 @@ class ThirteenthActivity : AppCompatActivity() {
         }.attach()
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
+

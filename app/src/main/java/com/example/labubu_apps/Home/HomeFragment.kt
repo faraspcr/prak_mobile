@@ -17,6 +17,7 @@ import com.example.labubu_apps.AuthActivity
 import com.example.labubu_apps.Data.Api.PhotoApiClient
 import com.example.labubu_apps.Home.pertemuan_10.TenthActivity
 import com.example.labubu_apps.Home.pertemuan_13.ThirteenthActivity
+import com.example.labubu_apps.Home.pertemuan_3.ThirdActivity
 import com.example.labubu_apps.Home.pertemuan_4.FourthActivity
 import com.example.labubu_apps.Home.pertemuan_7.SevenActivity
 import com.example.labubu_apps.Home.pertemuan_9.NinthActivity
@@ -49,6 +50,11 @@ class HomeFragment : Fragment() {
 
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
 
+        // Navigasi ke Pertemuan 3
+        binding.btnToThird.setOnClickListener {
+            val intent = Intent(requireContext(), ThirdActivity::class.java)
+            startActivity(intent)
+        }
         // Navigasi ke Pertemuan 4
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(requireContext(), FourthActivity::class.java)

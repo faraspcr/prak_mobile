@@ -14,24 +14,29 @@ import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter
 
 class TabQrcodeFragment : Fragment() {
+    // Tambahkan deklarasi binding
     private var _binding: FragmentTabQrcodeBinding? = null
     private val binding get() = _binding!!
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentTabQrcodeBinding.inflate(inflater, container, false)
         return binding.root
-
     }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.btnGenerate.setOnClickListener {
             val text = binding.edtQrInput.text.toString().trim()
             if (text.isEmpty()) return@setOnClickListener
             binding.ivQrCode.setImageBitmap(createQR(text))
         }
     }
+
 
     private fun createQR(text: String): Bitmap {
         val writer = QRCodeWriter()
@@ -51,7 +56,10 @@ class TabQrcodeFragment : Fragment() {
         }
     }
 
+
     override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 }
+
